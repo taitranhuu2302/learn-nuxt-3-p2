@@ -5,106 +5,106 @@ import { useCounterStore } from "~/stores/useCounterStore";
 // Using Pinia Store
 const store = useCounterStore();
 
-// // App Config
-// const appConfig = useAppConfig();
-// console.log(`App Config: `, appConfig.author); // Tran Huu Tai
+// App Config
+const appConfig = useAppConfig();
+console.log(`App Config: `, appConfig.author); // Tran Huu Tai
 
-// // useAsyncData
-// const { data: asyncData } = await useAsyncData(
-//   "mountains",
-//   () => $fetch("https://api.nuxtjs.dev/mountains")
-// );
-// console.log(`useAsyncData: `, asyncData.value);
+// useAsyncData
+const { data: asyncData } = await useAsyncData(
+  "mountains",
+  () => $fetch("https://api.nuxtjs.dev/mountains")
+);
+console.log(`useAsyncData: `, asyncData.value);
 
-// // useCookie
-// const token = useCookie('token')
-// token.value = 'Tran Huu Tai'
-// console.log(`useCookie: `, token.value);
+// useCookie
+const token = useCookie('token')
+token.value = 'Tran Huu Tai'
+console.log(`useCookie: `, token.value);
 
-// // useFetch
-// const { data: fetchData } = await useFetch('https://api.nuxtjs.dev/mountains',{
-//     query: { param1: 'value1' }
-// })
-// console.log(`useFetch: `,fetchData.value)
+// useFetch
+const { data: fetchData } = await useFetch('https://api.nuxtjs.dev/mountains',{
+    query: { param1: 'value1' }
+})
+console.log(`useFetch: `,fetchData.value)
 
-// // useHeadSafe
-// useHeadSafe({
-//   script: [
-//     { id: 'xss-script', innerHTML: 'alert("xss")' }
-//   ],
-//   meta: [
-//     { 'http-equiv': 'refresh', content: '0;javascript:alert(1)' }
-//   ]
-// })
+// useHeadSafe
+useHeadSafe({
+  script: [
+    { id: 'xss-script', innerHTML: 'alert("xss")' }
+  ],
+  meta: [
+    { 'http-equiv': 'refresh', content: '0;javascript:alert(1)' }
+  ]
+})
 
-// // useHead
-// useHead({
-//     title: 'Tran Huu Tai'
-// })
+// useHead
+useHead({
+    title: 'Tran Huu Tai'
+})
 
-// // useLazyAsyncData
-// const { data: lazyAsyncData } = await useLazyAsyncData("mountains-lazy", () =>
-//   $fetch("https://api.nuxtjs.dev/mountains")
-// );
-// console.log(lazyAsyncData.value)
+// useLazyAsyncData
+const { data: lazyAsyncData } = await useLazyAsyncData("mountains-lazy", () =>
+  $fetch("https://api.nuxtjs.dev/mountains")
+);
+console.log(lazyAsyncData.value)
 
-// // useLazyFetch
-// const { data: fetchLazyData } = await useLazyFetch('https://api.nuxtjs.dev/mountains',{
-//     query: { param1: 'value1' }
-// })
-// console.log(`useLazyFetch: `, fetchLazyData.value)
+// useLazyFetch
+const { data: fetchLazyData } = await useLazyFetch('https://api.nuxtjs.dev/mountains',{
+    query: { param1: 'value1' }
+})
+console.log(`useLazyFetch: `, fetchLazyData.value)
 
-// // useNuxtApp
-// const nuxtApp = useNuxtApp()
-// nuxtApp.provide('hello', (name) => `Hello ${name}!`)
-// console.log(nuxtApp.$hello('name'))
+// useNuxtApp
+const nuxtApp = useNuxtApp()
+nuxtApp.provide('hello', (name) => `Hello ${name}!`)
+console.log(nuxtApp.$hello('name'))
 
-// // useNuxtData
-// await useFetch('https://api.nuxtjs.dev/mountains', { key: 'mountains-key' })
-// const {data: mountains} = useNuxtData('mountains-key')
-// console.log(mountains.value)
+// useNuxtData
+await useFetch('https://api.nuxtjs.dev/mountains', { key: 'mountains-key' })
+const {data: mountains} = useNuxtData('mountains-key')
+console.log(mountains.value)
 
-// // useRequestEvent
-// const event = useRequestEvent()
-// console.log(event) // In the browser, useRequestEvent will return undefined. 
+// useRequestEvent
+const event = useRequestEvent()
+console.log(event) // In the browser, useRequestEvent will return undefined. 
 
-// // useRequestHeaders
-// const headers = useRequestHeaders(['cookie'])
-// console.log(headers) // In the browser, useRequestHeaders will return an empty object
+// useRequestHeaders
+const headers = useRequestHeaders(['cookie'])
+console.log(headers) // In the browser, useRequestHeaders will return an empty object
 
-// // useRequestURL
-// const url = useRequestURL()
-// console.log(url);
+// useRequestURL
+const url = useRequestURL()
+console.log(url);
 
-// // useRoute
-// const route = useRoute()
-// console.log(route);
+// useRoute
+const route = useRoute()
+console.log(route);
 
-// // useRouter
-// const router = useRouter()
-// router.back();
-// router.forward();
-// router.go();
-// router.push({ path: "/test" });
+// useRouter
+const router = useRouter()
+router.back();
+router.forward();
+router.go();
+router.push({ path: "/test" });
 
-// // useRuntimeConfig
-// const config = useRuntimeConfig()
-// console.log(config.apiSecret); // is only accessible on the server-side.
-// console.log(config.public.apiPublic);
+// useRuntimeConfig
+const config = useRuntimeConfig()
+console.log(config.apiSecret); // is only accessible on the server-side.
+console.log(config.public.apiPublic);
 
-// // useSeoMeta
-// useSeoMeta({
-  // title: 'My Amazing Site',
-  // ogTitle: 'My Amazing Site',
-  // description: 'This is my amazing site, let me tell you all about it.',
-  // ogDescription: 'This is my amazing site, let me tell you all about it.',
-  // ogImage: 'https://example.com/image.png',
-  // twitterCard: 'summary_large_image',
-// })
+// useSeoMeta
+useSeoMeta({
+  title: 'My Amazing Site',
+  ogTitle: 'My Amazing Site',
+  description: 'This is my amazing site, let me tell you all about it.',
+  ogDescription: 'This is my amazing site, let me tell you all about it.',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image',
+})
 
-// // useState
-// const testState = useState('test', () => 'Tran Huu Tai')
-// console.log(testState.value);
+// useState
+const testState = useState('test', () => 'Tran Huu Tai')
+console.log(testState.value);
 </script>
 
 <template>
